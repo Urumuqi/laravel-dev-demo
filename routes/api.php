@@ -13,10 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('/', function () {
     return response()->json([
         'code' => 0,
@@ -24,3 +20,6 @@ Route::get('/', function () {
         'data' => [],
     ]);
 });
+
+// demo api
+Route::post('/login', 'UserController@login');
