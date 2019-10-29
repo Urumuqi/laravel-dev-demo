@@ -91,19 +91,16 @@ class UserAuthService implements UserProvider
         //     ]);
         //     $user->save();
         // }
-        // $this->user = $user;
-        $user = [
-            'name' => 'admin',
-            'passwd' => 'admin',
-        ];
+        $user = new User;
+        $this->user = $user;
         return $user;
     }
 
     /**
      * Validate a user against the given credentials.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
-     * @param  array  $credentials
+     * @param  \Illuminate\Contracts\Auth\Authenticatable $user
+     * @param  array                                      $credentials
      * @return bool
      */
     public function validateCredentials(Authenticatable $user, array $credentials)
