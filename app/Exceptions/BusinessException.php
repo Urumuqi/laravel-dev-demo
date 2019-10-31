@@ -1,6 +1,7 @@
 <?php
 /**
- * 业务异常 异常类.
+ * 业务异常:异常类.
+ * 所有的业务异常都继承BusinessException或者抛出BusinessException.
  *
  * @author wuqi <wuqi226@gmail.com>
  */
@@ -32,6 +33,7 @@ class BusinessException extends Exception
      */
     public function __construct($message = '', $code = 0, $category = 'default', Throwable $previous = null)
     {
+        $this->category = $category;
         parent::__construct($message, $code, $previous);
     }
 
