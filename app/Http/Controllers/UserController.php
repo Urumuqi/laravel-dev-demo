@@ -7,6 +7,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\BusinessException;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -43,6 +44,7 @@ class UserController extends Controller
             'token' => $token,
             'token_type' => 'Bearer',
         ];
+        throw new BusinessException('this is business exception', '1234');
 
         return $this->jsonSuccess($resp);
     }
